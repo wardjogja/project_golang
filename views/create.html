@@ -1,0 +1,58 @@
+{{define "title"}}
+Create
+{{end}}
+
+{{define "main"}}
+<div class="row content1">
+    <div class="col-md-2 ">
+        <a href="/"><button class="btn btn-warning render-kiri"><span class="fa fa-arrow-left"></span>&nbsp; Back</button></a>
+    </div>
+    <div class="col-md-8">
+    <form method="POST" action="/create" class="form-save">
+        <div class="row mb-3">
+          <label for="inputnama" class="col-sm-2 col-form-label">Nama Task</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="nama" id="" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputrekan" class="col-sm-2 col-form-label">Pegawai</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="pegawai">
+          </div>
+        </div>
+        <div class="row mb-3 " >
+            <label for="inputrekan" class="col-sm-2 col-form-label">Tanggal Deadline</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="tgl" id="datepicker">
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputrekan" class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-5">
+              <select class="form-control" name="status">
+                    <option value="1">Dibuat</option>
+                    <option value="2">Dikerjakan</option>
+                    <option value="3">Selesai</option>
+                </select>
+            </div>
+          </div>
+
+        <button type="submit" class="btn btn-primary"><span class="fa fa-floppy-o"></span>&nbsp; Simpan</button>
+        
+      </form>
+      
+      </div>
+      <div class="col-md-2"></div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#datepicker').datepicker({
+            format:'dd-mm-yyyy'
+        });
+    });
+ </script>
+{{end}}

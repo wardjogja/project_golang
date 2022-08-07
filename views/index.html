@@ -1,0 +1,50 @@
+{{define "title"}}
+Index
+{{end}}
+
+{{define "main"}}
+<div class="row content1">
+    <div class="col-md-2"></div><div class="col-md-8">
+    <div class="table-responsive">
+    <table class="table caption-top" border="1">
+        <caption> <a href="/create"><button type="button" class="btn btn-primary"><span class="fa fa-plus-circle "></span>&nbsp; New Task</button></a></caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" width="40%">Task</th>
+            <th scope="col" width="20%">Assignee</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+        <tbody>
+            
+            {{ range $index,$list_task := .Task_model}}
+          <tr>
+            <td scope="row"><p class="task1"></p></td>
+            <td><p class="task1">{{$list_task.Nama}}</p></td>
+            <td align="center"><p class="task1">{{$list_task.Pegawai}}</p></td>
+            <td align="center"><p class="task1">{{$list_task.Tgl}}</p></td>
+            <td align="center">
+            <p class="task1">
+                {{if eq $list_task.Status "1"}} <span class="badge text-bg-info">Dibuat </span>{{end}}
+                {{if eq $list_task.Status "2"}} <span class="badge text-bg-warning">Dikerjakan </span>{{end}}
+                {{if eq $list_task.Status "3"}} <span class="badge text-bg-success">Selesai </span>{{end}}
+            
+            </p></td>
+            <td align="center">
+                <a href="/update/{{$list_task.ID}}" data-bs-toggle="tooltip" data-bs-title="Default tooltip" ><span class="fa fa-pencil text text-warning"></span></a>&nbsp;&nbsp;
+                <a href="/delete/{{$list_task.ID}}"><span class="fa fa-remove text text-danger"></span></a>
+            </td>
+          </tr>
+          {{end}}
+          
+          
+        </tbody>
+      </table>
+    </div>
+    </div>
+  <div class="col-md-2"></div>
+</div>
+{{end}}

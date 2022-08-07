@@ -1,0 +1,61 @@
+h4{
+    color:#445544;
+}
+body{
+    background-color: #F9F2ED;
+}
+
+.navbar-brand{
+    color :#FFB562;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+.container-fluid a:hover{
+    color:#F9F2ED;
+}
+
+.content1{
+    margin-top:30px;
+}
+
+.table {
+    border:1px solid #FFB562;
+}
+
+.table thead th{
+    background-color: #06283D;
+    color:#F9F2ED;
+    text-align: center;
+}
+
+.task1 {
+    color:#2C3333;
+    font-family: Roboto;
+    font-size: 14px;
+}
+.fa-pencil {
+    margin-right: 10px;
+}
+.render-kiri{
+    padding-left: 20px;
+}
+
+table
+{
+    counter-reset: rowNumber;
+}
+
+table tr > td:first-child
+{
+    counter-increment: rowNumber;
+    color:#2C3333;
+    font-family: Roboto;
+    font-size: 14px;
+}
+                
+table tr td:first-child::before
+{
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}

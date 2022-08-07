@@ -32,9 +32,11 @@ func main() {
 	router.POST("/update/:id", TasksController.Update)
 	router.GET("/delete/:id", TasksController.DeleteTask)
 	
-	
-	fmt.Println("localhost://localhost:8080")
-	http.ListenAndServe(":8080",router)
+	port := os.Getenv("PORT")
+	// fmt.Println("localhost://localhost:8080")
+	// http.ListenAndServe(":8080",router)
+	fmt.Println("localhost://localhost:"+ port)
+	http.ListenAndServe(":"+port,router)
 
 	
 }

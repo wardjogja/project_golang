@@ -24,7 +24,13 @@ Create
         <div class="row mb-3 " >
             <label for="inputrekan" class="col-sm-2 col-form-label">Tanggal Deadline</label>
             <div class="col-sm-4">
-              <input type="text" class="form-control" name="tgl" id="datepicker">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><span class="fa fa-calendar"></fa></div>
+                    </div>
+                    <input type="text" class="form-control" name="tgl" id="datepicker">
+     
+              
               <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -33,7 +39,8 @@ Create
           <div class="row mb-3">
             <label for="inputrekan" class="col-sm-2 col-form-label">Status</label>
             <div class="col-sm-5">
-              <select class="form-control" name="status">
+              <select class="custom-select" name="status">
+                    <option value="">Pilih...</option>
                     <option value="1">Dibuat</option>
                     <option value="2">Dikerjakan</option>
                     <option value="3">Selesai</option>
